@@ -41,3 +41,12 @@ For a GitHub project site, `vite.config.js` uses `base: './'` and HashRouter, so
 
 ## Content
 Public portfolio only; avoid disclosing client-confidential details without permission. Contact: utkarsh0836a@gmail.com; LinkedIn: https://www.linkedin.com/in/utkarshanand06/
+
+## Troubleshooting blank GitHub Pages screen
+- In GitHub Settings → Pages, set Source to **GitHub Actions**.
+- In the Actions tab, check that the **Deploy React Portfolio to GitHub Pages** workflow has a green checkmark.
+- If it fails, open the run and inspect the build step.
+- Hard refresh the live page (Ctrl+Shift+R).
+- Open browser Developer Tools (F12 → Console/Network) for missing assets or JavaScript errors.
+- The site should be loaded from the GitHub Pages URL, not by opening `index.html` directly from disk.
+- A local development server requires `npm install` and `npm run dev`.

@@ -1,43 +1,43 @@
-# Utkarsh Anand — Modern Multi-Page Portfolio
+# Utkarsh Anand — React Portfolio
 
-A static, white-background portfolio with six real HTML pages: Home, About, Skills, Experience, Projects, and Contact. No build step, Node.js, database, or hosting fees required for GitHub Pages.
+A modern, responsive, white-theme multi-page portfolio built with React + Vite + Motion + Lucide icons.
 
-## Run locally
+## Features
+- Six routes: Home, About, Skills, Experience, Projects, Contact
+- Icon-led top navigation; collapses on scroll to a Home shortcut
+- Mobile/tablet touch menu and transparent Back to Top button
+- Detailed STINS DCOD implementation experience, Snowflake Tasks and Stored Procedures, Power BI DEV → QA → SIT → UAT → PROD deployments
+- Clickable email, LinkedIn and GitHub
+- Supabase contact form and Edge Function AI chat integration
+- HashRouter (`/#/experience`) avoids GitHub Pages 404 on refresh
+- Accessible labels, responsive typography, reduced-motion support
 
-Extract the ZIP and open `index.html` in Chrome or Edge. All six HTML files and `styles.css`/`script.js` must stay together.
+## Run locally on Windows (VS Code)
+1. Install Node.js LTS.
+2. Extract this ZIP, open the project folder in VS Code.
+3. Open terminal and run:
+   `npm.cmd install`
+   `npm.cmd run dev`
+4. Open the localhost URL shown in the terminal.
 
-## Deploy free on GitHub Pages
+## Supabase configuration
+1. Copy `.env.example` to `.env`.
+2. Set `VITE_SUPABASE_URL` to your project URL and `VITE_SUPABASE_PUBLISHABLE_KEY` to your **public** publishable/anon key.
+3. Run `supabase/schema.sql` in the Supabase SQL editor **only after reviewing it**. If you already ran the earlier portfolio schema, don't run conflicting CREATE statements again without checking.
+4. Deploy `supabase/functions/portfolio-ai/index.ts` as the `portfolio-ai` Edge Function. Configure the provider API key as a Supabase Edge Function secret (never in Vite environment variables).
+5. Test the contact form and AI assistant with your Supabase project. These integrations are not activated until you complete setup.
 
-1. Create a public GitHub repository named `utkarsh-portfolio` (or use your existing one).
-2. Upload **the contents of this folder** to the repository root, replacing the old files. Ensure `index.html` is at the root.
-3. Go to Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save.
-4. Open `https://YOUR-USERNAME.github.io/utkarsh-portfolio/` once the Pages build completes.
+**Security:** A public contact endpoint and AI assistant require anti-spam controls, server-side validation, rate limiting, and cost controls before public launch. Never put secret/service_role/OpenAI keys in frontend code. Review SQL Row Level Security before deployment. Public visitors should not be able to SELECT submitted contact messages. This code is a starter, not a production security audit.
 
-## Contact form behavior
+## GitHub Pages (free)
+1. Create or update `utkarsh0836/utkarsh-portfolio`, keeping these files at the repository root.
+2. Push to `main` (or `master`). `.github/workflows/deploy.yml` builds the React app.
+3. In GitHub **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source.
+4. If you use Supabase, go to **Settings → Secrets and variables → Actions → Variables** and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`. These are public frontend values, not secrets.
+5. View **Actions** to monitor deployment.
+6. Live site URL: `https://utkarsh0836.github.io/utkarsh-portfolio/` once deployment succeeds.
 
-The contact form is **functional without a backend**: it validates name, email, and message, then opens the visitor's default email application with the subject and message filled in. The visitor must press Send in their email app. If no mail app is configured, the direct email link and copy-email button provide fallbacks. This is **not** a server-delivered contact form. For guaranteed in-browser delivery and message storage, connect a form backend (e.g., Formspree) later.
+For a GitHub project site, `vite.config.js` uses `base: './'` and HashRouter, so deep links work without server-side route rewrites.
 
-## Edit
-
-- Replace email address in `contact.html` and `script.js` if needed.
-- Replace GitHub URL in `contact.html`.
-- Update experience and projects with public, non-confidential information.
-- No dark-mode switch exists; white theme is the only theme.
-
-## STINS DCOD project content
-Experience and Projects now contain public-safe, detailed summaries of insurance data engineering work. Review the client/project names and performance claims for publication approval before deploying publicly.
-
-
-## Latest updates
-Expanded experience and project case studies, including Power BI report deployment across DEV, QA, SIT, UAT and PROD, detailed insurance reporting, reinsurance, claims and data quality contributions. Review public client naming before publication.
-
-
-## Navigation and contact
-- The Menu button opens an accessible left-side sliding mega menu on all six pages; Escape or backdrop closes it.
-- LinkedIn: https://www.linkedin.com/in/utkarshanand06/
-- Email: mailto:utkarsh0836a@gmail.com
-- The contact form opens the visitor’s email client; it does not send server-side messages.
-
-
-## Sidebar navigation
-On desktop devices with a mouse, move the pointer to the far-left 16px of the screen to reveal the navigation. It hides shortly after the pointer leaves the panel. The Menu button can also pin it open until closed. On phones and tablets, tap Menu to open and the close icon or outside area to dismiss. Keyboard users can open with the Menu button and close with Escape.
+## Content
+Public portfolio only; avoid disclosing client-confidential details without permission. Contact: utkarsh0836a@gmail.com; LinkedIn: https://www.linkedin.com/in/utkarshanand06/

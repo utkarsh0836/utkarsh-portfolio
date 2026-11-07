@@ -6,3 +6,35 @@
 /* Premium left-slide navigation — always light */
 .menu{display:inline-flex!important;align-items:center;gap:10px;border:1px solid #e0e7f2;background:#fff;border-radius:13px;padding:12px 16px;color:#1c2d4f;font-size:19px;cursor:pointer;font-weight:800;transition:background .2s,transform .2s}
 .menu:hover{background:#f1f5ff;transform:translateY(-1px)}.menu-label{font-size:12px;letter-spacing:.3px}.nav{gap:18px}.nav .logo{margin-right:auto}.header-right{display:flex;align-items:center;gap:24px}.header-link{font-size:13px;font-weight:800;color:#4355a0}.drawer-backdrop{position:fixed;inset:0;background:rgba(15,26,51,.48);backdrop-filter:blur(3px);z-index:98;opacity:0;transition:opacity .28s}.drawer-backdrop.show{opacity:1}.site-drawer{position:fixed;inset:0 auto 0 0;width:min(440px,92vw);background:#fff;z-index:99;box-shadow:22px 0 70px #1526472c;transform:translateX(-105%);transition:transform .32s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;overflow-y:auto;visibility:hidden}.site-drawer.open{transform:translateX(0);visibility:visible}.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:26px 30px;border-bottom:1px solid #e8edf5}.drawer-close{border:1px solid #e3e8f1;border-radius:12px;background:#fff;width:42px;height:42px;font-size:19px;cursor:pointer}.drawer-intro{padding:29px 30px 18px}.drawer-kicker{color:#6476a0;font-size:10px;letter-spacing:1.8px;font-weight:800}.drawer-intro h2{font-size:35px;line-height:1.2;letter-spacing:-1.5px;margin:12px 0}.drawer-intro p{color:#78859a;line-height:1.6;font-size:13px;margin:0}.drawer-nav{padding:10px 20px 25px;display:grid;gap:5px}.drawer-nav a{display:flex;align-items:center;gap:16px;padding:15px 16px;border-radius:14px;font-size:15px;font-weight:800;color:#324260;transition:background .2s,transform .2s}.drawer-nav a:hover,.drawer-nav a.active{background:#eff3ff;color:#3156e7;transform:translateX(3px)}.drawer-icon{width:27px;font-size:20px;text-align:center}.drawer-chevron{margin-left:auto;font-size:14px;opacity:.55}.drawer-bottom{margin-top:auto;background:#f7f9fd;border-top:1px solid #e8edf5;padding:26px 30px;display:grid;gap:13px}.drawer-bottom>a{font-size:14px;font-weight:800;overflow-wrap:anywhere;color:#2b4cbd}.drawer-social{display:flex;gap:20px;font-size:12px;font-weight:800;color:#536682}.footer-links{display:flex;flex-wrap:wrap;gap:17px}.footer-links a{font-size:12px;font-weight:800;color:#385bdb}body.drawer-open{overflow:hidden}@media(max-width:760px){.menu{margin-left:0!important}.nav-contact{display:none}.header-link{font-size:12px}.header-right{gap:8px}.nav .logo{font-size:15px}.menu-label{display:none}.drawer-head{padding:20px}.drawer-intro{padding:24px 24px 12px}.drawer-nav{padding-inline:14px}.drawer-bottom{padding:22px 24px}}
+
+/* 2026 responsive hover-sidebar update */
+:root{--ink:#111111}
+.site-header .logo,.drawer-head .logo{color:#101010!important;font-weight:800!important;letter-spacing:-.65px}
+.site-header .logo{font-size:clamp(18px,2vw,23px)}
+.logo-mark{display:none!important}
+.site-header .nav{position:relative}
+.edge-trigger{position:fixed;top:0;left:0;bottom:0;width:16px;z-index:97;background:transparent}
+.menu{color:#111!important;border-color:#e4e7ed!important}
+.site-drawer{z-index:101}
+.drawer-backdrop{z-index:100}
+@media (hover:hover) and (pointer:fine){
+ .drawer-backdrop{pointer-events:none!important;background:transparent!important;backdrop-filter:none!important}
+ .site-drawer{box-shadow:12px 0 48px #17203b24}
+ body.drawer-open{overflow:auto}
+}
+@media (hover:none),(pointer:coarse){.edge-trigger{display:none}.drawer-backdrop{pointer-events:auto}}
+@media(max-width:760px){
+ .site-header{height:68px}.nav{gap:12px}.wrap{width:min(100% - 32px,1180px)}
+ .nav .logo{font-size:17px!important;white-space:normal;line-height:1.2}
+ .header-right .header-link{display:none}
+ .menu{min-width:43px;min-height:43px;justify-content:center;padding:8px 10px}
+ .site-drawer{width:min(360px,90vw)}
+ .hero{padding-block:42px 50px;gap:20px;min-height:auto}
+ .hero h1{font-size:clamp(34px,9vw,54px);letter-spacing:-2px}
+ .hero-desc{font-size:15px;line-height:1.7}
+ .hero-metrics{flex-wrap:wrap}
+ .page-intro h1{font-size:clamp(34px,9vw,52px)}
+ .work-overview,.work-section,.case-card{overflow-wrap:anywhere}
+}
+@media(max-width:420px){.site-header .logo{font-size:16px!important}.header-right{display:none}.hero-right{max-width:100%;overflow:hidden}.hero-actions{gap:10px}.hero-actions .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.site-drawer{transition:none!important}}

@@ -37,3 +37,7 @@ Expanded experience and project case studies, including Power BI report deployme
 - LinkedIn: https://www.linkedin.com/in/utkarshanand06/
 - Email: mailto:utkarsh0836a@gmail.com
 - The contact form opens the visitor’s email client; it does not send server-side messages.
+
+
+## Sidebar navigation
+On desktop devices with a mouse, move the pointer to the far-left 16px of the screen to reveal the navigation. It hides shortly after the pointer leaves the panel. The Menu button can also pin it open until closed. On phones and tablets, tap Menu to open and the close icon or outside area to dismiss. Keyboard users can open with the Menu button and close with Escape.

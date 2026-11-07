@@ -1,49 +1,39 @@
-# Utkarsh Anand — Portfolio Website
+# Utkarsh Anand — Modern Multi-Page Portfolio
 
-Responsive white-first portfolio with a persistent light/dark switch, About, Skills, Experience, Projects and a contact form. No personal email address is displayed.
+A static, white-background portfolio with six real HTML pages: Home, About, Skills, Experience, Projects, and Contact. No build step, Node.js, database, or hosting fees required for GitHub Pages.
 
-## Preview locally
+## Run locally
 
-Open `index.html` in a browser. Theme switching works without setup. The contact form requires Supabase configuration and a web server (recommended).
+Extract the ZIP and open `index.html` in Chrome or Edge. All six HTML files and `styles.css`/`script.js` must stay together.
 
-For local hosting, from this folder run:
+## Deploy free on GitHub Pages
 
-```bash
-python -m http.server 8000
-```
+1. Create a public GitHub repository named `utkarsh-portfolio` (or use your existing one).
+2. Upload **the contents of this folder** to the repository root, replacing the old files. Ensure `index.html` is at the root.
+3. Go to Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save.
+4. Open `https://YOUR-USERNAME.github.io/utkarsh-portfolio/` once the Pages build completes.
 
-Then visit http://localhost:8000
+## Contact form behavior
 
-## Configure the contact form
+The contact form is **functional without a backend**: it validates name, email, and message, then opens the visitor's default email application with the subject and message filled in. The visitor must press Send in their email app. If no mail app is configured, the direct email link and copy-email button provide fallbacks. This is **not** a server-delivered contact form. For guaranteed in-browser delivery and message storage, connect a form backend (e.g., Formspree) later.
 
-1. In Supabase Dashboard, select your project.
-2. Open SQL Editor and run the contents of `supabase.sql`.
-3. Go to Project Settings > Data API (or API) and copy the Project URL.
-4. Go to Project Settings > API Keys and copy the publishable key (or legacy anon key).
-5. Paste both values into `config.js`.
-6. Test a message, then check Supabase > Table Editor > `portfolio_messages`.
+## Edit
 
-**Security:** The publishable/anon key is designed for frontend use with RLS; NEVER expose a `service_role` key, secret key or database password. RLS permits anonymous INSERT only, not public SELECT. Public forms can still receive spam; for a production site use CAPTCHA and server-side rate limiting via an Edge Function. Do not collect sensitive personal data.
+- Replace email address in `contact.html` and `script.js` if needed.
+- Replace GitHub URL in `contact.html`.
+- Update experience and projects with public, non-confidential information.
+- No dark-mode switch exists; white theme is the only theme.
 
-## Free deployment
+## STINS DCOD project content
+Experience and Projects now contain public-safe, detailed summaries of insurance data engineering work. Review the client/project names and performance claims for publication approval before deploying publicly.
 
-### Netlify
 
-1. Visit https://app.netlify.com/drop
-2. Drag and drop the unzipped `utkarsh-portfolio` folder.
-3. Netlify gives you a public site URL.
+## Latest updates
+Expanded experience and project case studies, including Power BI report deployment across DEV, QA, SIT, UAT and PROD, detailed insurance reporting, reinsurance, claims and data quality contributions. Review public client naming before publication.
 
-### GitHub Pages
 
-1. Create a public repository and upload the files in this folder to its root.
-2. Go to repository Settings > Pages.
-3. Select Deploy from a branch, branch `main`, folder `/ (root)`.
-4. Wait for the published site URL.
-
-## Customize
-
-Edit text in `index.html`, colors in `styles.css`, and the Supabase connection in `config.js`.
-
-## Notes
-
-The website uses plain HTML, CSS and JavaScript: no npm, build tools, paid hosting, or frontend framework required. The contact form stores messages in Supabase and does not automatically send emails.
+## Navigation and contact
+- The Menu button opens an accessible left-side sliding mega menu on all six pages; Escape or backdrop closes it.
+- LinkedIn: https://www.linkedin.com/in/utkarshanand06/
+- Email: mailto:utkarsh0836a@gmail.com
+- The contact form opens the visitor’s email client; it does not send server-side messages.
